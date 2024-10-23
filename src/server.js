@@ -12,7 +12,7 @@ const app = express();
 // CORS configuration for localhost and Vercel
 app.use(cors({
     credentials: true,
-    origin: ["http://localhost:3000", "https://your-vercel-app.vercel.app"]
+    origin: ["http://localhost:3000","http://localhost:1234", "https://burp-six.vercel.app/"]
 }));
 
 // Static files
