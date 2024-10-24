@@ -13,7 +13,7 @@ const app = express();
 // CORS Configuration
 app.use(cors({
     credentials: true,
-    origin: ["http://localhost:3000", "http://localhost:1234", "https://burp-six.vercel.app/"], // Add your frontend origins
+    origin: ["http://localhost:3000", "http://localhost:1234", "https://burp-six.vercel.app"], // Add your frontend origins
 }));
 
 // Serve static files from the 'images' folder
