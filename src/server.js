@@ -16,7 +16,6 @@ const app = express();
 app.use(express.json());
 app.use(helmet());
 
-const cors = require('cors');
 const allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:1234',
@@ -45,7 +44,7 @@ app.use((req, res) => {
 
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000; // Default to 3000 if no port is set
 app.listen(PORT, () => {
-    console.log(`Backend is listening on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
