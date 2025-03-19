@@ -1,16 +1,23 @@
+import dotenv from "dotenv";
+dotenv.config({ path: "./src/.env" });
+
 import express from "express";
 import cors from "cors";
 import foodRouter from "./routers/food.router.js";
+import authRouter from './authRouter.js';
+import "./models/dbConnection.js";
+
 
 const app = express();
 
 // CORS Configuration
 app.use(cors({
     credentials: true,
-    origin: ["http://localhost:3000", "http://localhost:1234", "https://burp-six.vercel.app"], // Add your frontend origins
+    origin: ["http://localhost:3000", "http://localhost:1234", "https://burp-six.vercel.app"], 
 }));
 
-// app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use("/auth", authRouter)
+
 // API routes (make sure foodRouter returns S3 URLs)
 app.use("/api/foods", foodRouter);
 
